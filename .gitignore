@@ -1,0 +1,28 @@
+# Build files
+bin/
+obj/
+
+# User-specific settings
+*.user
+*.suo
+
+# Debug files
+*.log
+*.tlog
+*.pdb
+
+# Designer-generated cache
+*.cache
+*.resources
+
+# Assemblies
+*.dll
+*.exe
+
+# Visual Studio settings
+.vs/
+.vscode/
+
+# NuGet
+packages/
+project.lock.json

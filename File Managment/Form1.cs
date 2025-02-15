@@ -12,7 +12,9 @@ namespace File_Managment
         public Form1()
         {
             InitializeComponent();
-            leftPane    = new Pane(leftListBox, leftPathTextBox);
+            Text = "Dual-Pane File Manager";
+
+            leftPane = new Pane(leftListBox, leftPathTextBox);
             rightPane   = new Pane(rightListBox, rightPathTextBox);
             leftPane.LoadDrives();
             rightPane.LoadDrives();

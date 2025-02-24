@@ -15,7 +15,7 @@ namespace File_Managment
             Text = "Dual-Pane File Manager";
 
             leftPane = new Pane(leftListBox, leftPathTextBox);
-            rightPane   = new Pane(rightListBox, rightPathTextBox);
+            rightPane = new Pane(rightListBox, rightPathTextBox);
             leftPane.LoadDrives();
             rightPane.LoadDrives();
         }
@@ -28,10 +28,12 @@ namespace File_Managment
             ListBox listBox = sender as ListBox;
             Pane clickedPane = listBox == leftListBox ? leftPane : rightPane;
             Pane.lastAccessedPane = clickedPane == leftPane ? "left" : "right";
-            clickedPane.SelectedItem = listBox.SelectedItem.ToString();
+            if (listBox.SelectedItem != null)
+                clickedPane.SelectedItem = listBox.SelectedItem.ToString();
+
         }
 
-        private void copyButton_Click(object sender, EventArgs e) 
+        private void copyButton_Click(object sender, EventArgs e)
         {
             // Copy needs a source path and a destination path
             // It needs to check if the source path is a file or a folder
@@ -69,13 +71,13 @@ namespace File_Managment
 
         }
 
-        private void backButton_Click(object sender, EventArgs e) 
+        private void backButton_Click(object sender, EventArgs e)
         {
             Pane clickedPane = Pane.lastAccessedPane == "left" ? leftPane : rightPane;
             clickedPane.GoBack();
         }
 
-        private void HandleDoubleClickListBox(Object sender, EventArgs e) 
+        private void HandleDoubleClickListBox(Object sender, EventArgs e)
         {
             /*
              * This method is called by the outside world when a double click is detected on a list box
@@ -109,5 +111,20 @@ namespace File_Managment
             }
         }
 
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            Pane activePane = Pane.lastAccessedPane == "left" ? leftPane : rightPane;
+
+            if (string.IsNullOrEmpty(activePane.SelectedItem))
+            {
+                MessageBox.Show("Please select a file or folder first!");
+                return;
+            }
+
+            string fullPath = Path.Combine(activePane.CurrentPath, activePane.SelectedItem);
+            Utility.Delete(fullPath);
+
+            activePane.LoadDirectory(activePane.CurrentPath);
+        }
     }
 }

@@ -41,25 +41,28 @@
             // 
             // leftPathTextBox
             // 
-            leftPathTextBox.Location = new Point(67, 74);
+            leftPathTextBox.Location = new Point(47, 44);
+            leftPathTextBox.Margin = new Padding(2, 2, 2, 2);
             leftPathTextBox.Name = "leftPathTextBox";
             leftPathTextBox.ReadOnly = true;
-            leftPathTextBox.Size = new Size(263, 31);
+            leftPathTextBox.Size = new Size(185, 23);
             leftPathTextBox.TabIndex = 0;
             // 
             // rightPathTextBox
             // 
-            rightPathTextBox.Location = new Point(474, 74);
+            rightPathTextBox.Location = new Point(332, 44);
+            rightPathTextBox.Margin = new Padding(2, 2, 2, 2);
             rightPathTextBox.Name = "rightPathTextBox";
             rightPathTextBox.ReadOnly = true;
-            rightPathTextBox.Size = new Size(263, 31);
+            rightPathTextBox.Size = new Size(185, 23);
             rightPathTextBox.TabIndex = 1;
             // 
             // moveRightButton
             // 
-            moveRightButton.Location = new Point(376, 196);
+            moveRightButton.Location = new Point(263, 118);
+            moveRightButton.Margin = new Padding(2, 2, 2, 2);
             moveRightButton.Name = "moveRightButton";
-            moveRightButton.Size = new Size(48, 34);
+            moveRightButton.Size = new Size(34, 20);
             moveRightButton.TabIndex = 4;
             moveRightButton.Text = ">";
             moveRightButton.UseVisualStyleBackColor = true;
@@ -67,9 +70,10 @@
             // 
             // moveLeftButton
             // 
-            moveLeftButton.Location = new Point(376, 248);
+            moveLeftButton.Location = new Point(263, 149);
+            moveLeftButton.Margin = new Padding(2, 2, 2, 2);
             moveLeftButton.Name = "moveLeftButton";
-            moveLeftButton.Size = new Size(48, 34);
+            moveLeftButton.Size = new Size(34, 20);
             moveLeftButton.TabIndex = 5;
             moveLeftButton.Text = "<";
             moveLeftButton.UseVisualStyleBackColor = true;
@@ -77,9 +81,10 @@
             // 
             // copyButton
             // 
-            copyButton.Location = new Point(67, 392);
+            copyButton.Location = new Point(47, 235);
+            copyButton.Margin = new Padding(2, 2, 2, 2);
             copyButton.Name = "copyButton";
-            copyButton.Size = new Size(112, 34);
+            copyButton.Size = new Size(78, 20);
             copyButton.TabIndex = 6;
             copyButton.Text = "Copy";
             copyButton.UseVisualStyleBackColor = true;
@@ -87,18 +92,21 @@
             // 
             // deleteButton
             // 
-            deleteButton.Location = new Point(348, 392);
+            deleteButton.Location = new Point(244, 235);
+            deleteButton.Margin = new Padding(2, 2, 2, 2);
             deleteButton.Name = "deleteButton";
-            deleteButton.Size = new Size(112, 34);
+            deleteButton.Size = new Size(78, 20);
             deleteButton.TabIndex = 7;
             deleteButton.Text = "Delete";
             deleteButton.UseVisualStyleBackColor = true;
+            deleteButton.Click += deleteButton_Click;
             // 
             // backButton
             // 
-            backButton.Location = new Point(625, 392);
+            backButton.Location = new Point(438, 235);
+            backButton.Margin = new Padding(2, 2, 2, 2);
             backButton.Name = "backButton";
-            backButton.Size = new Size(112, 34);
+            backButton.Size = new Size(78, 20);
             backButton.TabIndex = 8;
             backButton.Text = "Back";
             backButton.UseVisualStyleBackColor = true;
@@ -107,10 +115,11 @@
             // leftListBox
             // 
             leftListBox.FormattingEnabled = true;
-            leftListBox.ItemHeight = 25;
-            leftListBox.Location = new Point(67, 136);
+            leftListBox.ItemHeight = 15;
+            leftListBox.Location = new Point(47, 82);
+            leftListBox.Margin = new Padding(2, 2, 2, 2);
             leftListBox.Name = "leftListBox";
-            leftListBox.Size = new Size(263, 229);
+            leftListBox.Size = new Size(185, 139);
             leftListBox.TabIndex = 9;
             leftListBox.Click += HandleSingleClick;
             leftListBox.DoubleClick += HandleDoubleClickListBox;
@@ -118,19 +127,20 @@
             // rightListBox
             // 
             rightListBox.FormattingEnabled = true;
-            rightListBox.ItemHeight = 25;
-            rightListBox.Location = new Point(474, 136);
+            rightListBox.ItemHeight = 15;
+            rightListBox.Location = new Point(332, 82);
+            rightListBox.Margin = new Padding(2, 2, 2, 2);
             rightListBox.Name = "rightListBox";
-            rightListBox.Size = new Size(263, 229);
+            rightListBox.Size = new Size(185, 139);
             rightListBox.TabIndex = 10;
             rightListBox.Click += HandleSingleClick;
             rightListBox.DoubleClick += HandleDoubleClickListBox;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(560, 270);
             Controls.Add(rightListBox);
             Controls.Add(leftListBox);
             Controls.Add(backButton);
@@ -140,6 +150,7 @@
             Controls.Add(moveRightButton);
             Controls.Add(rightPathTextBox);
             Controls.Add(leftPathTextBox);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);

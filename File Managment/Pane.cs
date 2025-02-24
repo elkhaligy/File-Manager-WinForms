@@ -55,8 +55,8 @@ namespace File_Managment
             /*
              * Add the . and .. items to the list box
             */
-            ListBox.Items.Add(".");
-            ListBox.Items.Add("..");
+            //ListBox.Items.Add(".");
+            //ListBox.Items.Add("..");
 
             /* 
              * Get the drives in the system and populate the list box with them

@@ -39,5 +39,30 @@ namespace File_Managment
                 _CopyDirectory(subDir, destSubDir);
             }
         }
+
+        public static void Delete(string path)
+        {
+            if (File.Exists(path))
+            {
+                var result = MessageBox.Show("Are you sure you want to delete this file?", "Confirm", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    File.Delete(path);
+                }
+            }
+            else if (Directory.Exists(path))
+            {
+                var result = MessageBox.Show("Are you sure you want to delete this folder and its contents?", "Confirm", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    Directory.Delete(path, true);
+                }
+            }
+            else
+            {
+                MessageBox.Show("File or directory not found.");
+            }
+        }
+
     }
 }
